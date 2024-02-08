@@ -8,10 +8,5 @@ def fizzbuzz():
         elif i % 3 == 0 and i % 5 == 0:
             print("FizzBuzz", end='')
         else:
-            print(i,end='')
+            print(i, end='')
         print(end=' ')
-
-fizzbuzz = __import__('12-fizzbuzz').fizzbuzz
-
-fizzbuzz()
-print("")
