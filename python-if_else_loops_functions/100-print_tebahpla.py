@@ -1,3 +1,6 @@
 #!/usr/bin/python3
-for i in range(122, 96, -1):
-    print(chr(i) if i % 2 == 0 else chr(i-32), end='')
+for x in range(122, 96, -1):
+    if x % 2 != 0:
+        print("{}".format(chr(x - 32)), end="")
+    else:
+        print("{}".format(chr(x)), end="")
