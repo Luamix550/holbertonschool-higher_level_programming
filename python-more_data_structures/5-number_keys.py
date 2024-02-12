@@ -1,3 +1,3 @@
 def number_keys(a_dictionary):
-    key_list = list(a_dictionary) 
-    return len(key_list)
+    key_list = len(a_dictionary.keys()) 
+    return (key_list)
