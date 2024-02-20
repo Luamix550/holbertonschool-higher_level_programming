@@ -50,6 +50,9 @@ class Rectangle:
                 total += "\n"
         return total
 
+    def __del__(self):
+        print("Bye rectangle...")
+
     def area(self):
         return self.__width * self.__height
 
