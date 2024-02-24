@@ -1,18 +1,15 @@
 #!/usr/bin/python3
-""" Module that contains a function that returns the JSON
-representation of an object
-"""
-import json
+from os import path
+from sys import argv
+save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 
+if path.exists('add_item.json'):
+    obj_json_file = load_from_json_file('add_item.json')
+else:
+    obj_json_file = []
 
-def to_json_string(my_obj):
-    """ Function that returns the JSON representation of an object
+for i in range(1, len(argv)):
+    obj_json_file.append(argv[i])
 
-    Args:
-        my_obj: object
-
-    Raises:
-        Exception: when the object can't be encoded
-
-    """
-    return json.dumps(my_obj)
+save_to_json_file(obj_json_file, 'add_item.json')
