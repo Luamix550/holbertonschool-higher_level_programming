@@ -27,7 +27,7 @@ class Rectangle(Base):
         """Getter method for height attribute."""
         return self.__height
     
-    @width.setter
+    @height.setter
     def height(self, value):
         """Setter method for height attribute."""
         self.__height = value
@@ -37,7 +37,7 @@ class Rectangle(Base):
         """Getter method for x attribute."""
         return self.__x
     
-    @width.setter
+    @x.setter
     def x(self, value):
         """Setter method for x attribute."""
         self.__x = value
@@ -47,7 +47,7 @@ class Rectangle(Base):
         """Getter method for y attribute."""
         return self.__y
     
-    @width.setter
+    @y.setter
     def y(self, value):
         """Setter method for y attribute."""
         self.__y = value
