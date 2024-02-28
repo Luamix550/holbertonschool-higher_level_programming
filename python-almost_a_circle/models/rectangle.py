@@ -99,4 +99,15 @@ class Rectangle(Base):
 
     def __str__(self):
         """Returns the string representation of the Rectangle."""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        repre = "[Rectangle] ({}) {}/{} - {}/{}"
+        return repre.format(self.id, self.x, self.y, self.width, self.height)
+
+
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(4, 6, 2, 1, 12)
+    print(r1)
+
+    r2 = Rectangle(5, 5, 1)
+    print(r2)
