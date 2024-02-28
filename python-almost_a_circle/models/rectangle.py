@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This is the Rectangle module.
 
-Contains the Rectangle class that inherits from Base.
+
 """
 from models.base import Base
 
@@ -32,11 +32,6 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    def __str__(self):
-        """Overrides the default behaviour of the __str__ method."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height)
-
     # width attribute getter and setter.
     @property
     def width(self):
@@ -65,7 +60,7 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         self.__height = value
 
-    # x attribute getter and setter.
+    # x getter and setter.
     @property
     def x(self):
         """Get and Set the x attribute of the Rectangle."""
@@ -79,7 +74,7 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = value
 
-    # y attribute getter and setter.
+    # y getter and setter.
     @property
     def y(self):
         """Get and Set the y attribute of the Rectangle."""
@@ -92,3 +87,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """Area of the rectangle."""
+        return self.width * self.height
