@@ -113,7 +113,7 @@ class Rectangle(Base):
             print(" " * self.x, end="")
             print("#" * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Updates the attributes of the Rectangle.
 
         Args:
@@ -123,6 +123,8 @@ class Rectangle(Base):
                 - 3 arguments: Updates the id, width, and height attributes.
                 - 4 arguments: Updates the id, width, height, and x attributes.
                 - 5 arguments: Updates attributes (id, width, height, x, y).
+                **kwargs: Variable number of keyword arguments.
+                Each key represents an attribute of the instance.
         """
         if args:
             if len(args) >= 1:
@@ -135,3 +137,6 @@ class Rectangle(Base):
                 self.x = args[3]
             if len(args) >= 5:
                 self.y = args[4]
+            else:
+                for key, value in kwargs.items():
+                    setattr(self,key,value)
