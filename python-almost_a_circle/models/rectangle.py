@@ -117,13 +117,13 @@ class Rectangle(Base):
         """Updates the attributes of the Rectangle.
 
         Args:
-            *args: Variable number of arguments.
+            *args: Variable number of positional arguments.
                 - 1 argument: Updates the id attribute.
                 - 2 arguments: Updates the id and width attributes.
                 - 3 arguments: Updates the id, width, and height attributes.
                 - 4 arguments: Updates the id, width, height, and x attributes.
-                - 5 arguments: Updates attributes (id, width, height, x, y).
-                **kwargs: Variable number of keyword arguments.
+                - 5 arguments: Updates all attributes (id, width, height, x, y).
+            **kwargs: Variable number of keyword arguments.
                 Each key represents an attribute of the instance.
         """
         if args:
@@ -137,6 +137,6 @@ class Rectangle(Base):
                 self.x = args[3]
             if len(args) >= 5:
                 self.y = args[4]
-            else:
-                for key, value in kwargs.items():
-                    setattr(self,key,value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
