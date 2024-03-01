@@ -122,7 +122,7 @@ class Rectangle(Base):
                 - 2 arguments: Updates the id and width attributes.
                 - 3 arguments: Updates the id, width, and height attributes.
                 - 4 arguments: Updates the id, width, height, and x attributes.
-                - 5 arguments: Updates all attributes (id, width, height, x, y).
+                - 5 arguments: Updates attributes (id, width, height, x, y).
         """
         if args:
             if len(args) >= 1:
@@ -135,4 +135,3 @@ class Rectangle(Base):
                 self.x = args[3]
             if len(args) >= 5:
                 self.y = args[4]
-        
