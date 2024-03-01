@@ -122,7 +122,7 @@ class Rectangle(Base):
                 - 2 arguments: Updates the id and width attributes.
                 - 3 arguments: Updates the id, width, and height attributes.
                 - 4 arguments: Updates the id, width, height, and x attributes.
-                - 5 arguments: Updates all attributes (id, width, height, x, y).
+                - 5 arguments: Updates all attributes.
             **kwargs: Variable number of keyword arguments.
                 Each key represents an attribute of the instance.
         """
