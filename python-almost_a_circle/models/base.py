@@ -42,10 +42,10 @@ class Base:
     def create(cls, **dictionary):
         """Returns an instance of cls with attributes to the dictionary."""""
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)  # Create a dummy Rectangle
+            dummy = cls(1, 1)
         elif cls.__name__ == "Square":
-            dummy = cls(1)     # Create a dummy Square
-        dummy.update(**dictionary)  # Update dummy with provided dictionary
+            dummy = cls(1)
+        dummy.update(**dictionary)
         return dummy
 
     @classmethod
