@@ -20,10 +20,9 @@ if __name__ == '__main__':
         db=database_name
     )
 
-    name_s = state_name_searched
-
     cur = db.cursor()
-    cur.execute("SELECt * FROM states WHERE name = %s ORDER BY id", (name_s,))
+    query_str = "SELECt * FROM states WHERE name = %s ORDER BY id"
+    cur.execute(query_str, (state_name_searched,))
     rows = cur.fetchall()
 
     for row in rows:
