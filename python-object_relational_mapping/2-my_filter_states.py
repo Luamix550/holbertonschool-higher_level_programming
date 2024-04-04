@@ -7,6 +7,7 @@ import MySQLdb
 from sys import argv
 
 if __name__ == '__main__':
+
     mysql_username = argv[1]
     mysql_password = argv[2]
     database_name = argv[3]
@@ -21,8 +22,10 @@ if __name__ == '__main__':
     )
 
     cur = db.cursor()
-    query_str = "SELECt * FROM states WHERE name = %s ORDER BY id"
-    cur.execute(query_str, (state_name_searched,))
+
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'"
+                .format(state_name_searched))
+
     rows = cur.fetchall()
 
     for row in rows:
