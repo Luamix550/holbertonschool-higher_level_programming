@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     cur.execute(
         "SELECT cities.id, cities.name, states.id FROM cities INNER JOIN"
-        "states ON cities.state_id = state.id WHERE states.name = %s"
+        "states ON cities.state_id = state.id WHERE name = %s"
         "ORDER BY cities.id", (state_name_searched,))
 
     rows = cur.fetchall()
