@@ -24,8 +24,8 @@ if __name__ == '__main__':
 
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'"
-                .format(state_name_searched))
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY s%",
+                (state_name_searched,))
 
     rows = cur.fetchall()
 
