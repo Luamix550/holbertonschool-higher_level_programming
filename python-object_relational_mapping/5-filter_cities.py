@@ -11,7 +11,7 @@ if __name__ == '__main__':
     mysql_username = argv[1]
     mysql_password = argv[2]
     database_name = argv[3]
-    state_name_searched = argv[4]
+    state_name = argv[4]
 
     db = MySQLdb.connect(
         host="localhost",
@@ -24,15 +24,18 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     cur.execute(
-        "SELECT cities.id, cities.name, states.id FROM cities INNER JOIN "
-        "states ON cities.state_id = states.id WHERE states.name = %s "
-        "ORDER BY cities.id")
-
+        "SELECT cities.name "
+        "FROM cities "
+        "INNER JOIN states ON cities.state_id = states.id "
+        "WHERE states.name = %s "
+        "ORDER BY cities.id",
+        (state_name,)
+    )
 
     rows = cur.fetchall()
 
-    for row in rows:
-        print(row)
+    cities_list = ', '.join(row[0] for row in rows)
+    print(cities_list)
 
     cur.close()
     db.close()
