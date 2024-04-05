@@ -24,9 +24,10 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     cur.execute(
-        "SELECT cities.id, cities.name, states.id FROM cities INNER JOIN"
-        "states ON cities.state_id = state.id WHERE name = %s"
-        "ORDER BY cities.id", (state_name_searched,))
+        "SELECT cities.id, cities.name, states.id FROM cities INNER JOIN "
+        "states ON cities.state_id = states.id WHERE states.name = %s "
+        "ORDER BY cities.id")
+
 
     rows = cur.fetchall()
 
