@@ -16,14 +16,12 @@ if __name__ == "__main__":
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
             username, password, database), pool_pre_ping=True)
-
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
     state_Obj = session.query(State).order_by(State.id).first()
-
     if state_Obj:
         print("{}: {}".format(state_Obj.id, state_Obj.name))
     else:
